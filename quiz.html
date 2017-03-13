@@ -1,0 +1,337 @@
+<html>
+<center>
+    <table border="1" style="width:20%">
+        <caption>Simple Maths Quiz</caption>
+        </br></br></br></br></br>
+        <tr>
+            <td>
+                <input type="button" onclick="IntAdd()" value="Integer Addition" /> 
+            	</br>
+            </td>
+            <td>
+                <input type="button" onclick="IntSub()" value="Integer Subtraction" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="FloatAdd()" value="Float Addition" /> 
+            	</br>
+            </td>
+            <td>
+                <input type="button" onclick="FloatSub()" value="Float Subtraction" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="ComplexAdd()" value="Complex Addition" />
+                </br>
+
+            </td>
+            <td>
+                <input type="button" onclick="ComplexSub()" value="Complex Subtraction" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="extraAddition()" value="Extra-Addition" /> 
+            	</br>
+            </td>
+            <td>
+                <input type="button" onclick="extraSubtaction()" value="Extra-Subtaction" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="CheckScore()" value="Check Score" /> 
+            	</br>
+            </td>
+            <td>
+                <input type="button" onclick="ResetScore()" value="Reset Score" />
+            </td>
+        </tr>
+
+</center>
+
+<script language="javascript">
+    // global variables
+    var total = 0;
+    var correct = 0;
+    var wrong = 0;
+
+    // ***********************  Integer addition  ******************
+    function IntAdd() {
+        var a = Math.ceil(Math.random() * 10);
+        var b = Math.ceil(Math.random() * 10);
+        if (a >= 10 || b >= 10) {
+            IntAdd();
+        } else {
+            var c = a + b;
+            var result = prompt(+a + " + " + b + " = ");
+            if (result != null && result!="" && result!="") {
+                if (result == c) {
+                    total++;
+                    correct++;
+                    alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                } else {
+                    total++;
+                    wrong++;
+                    alert("Wrong answer.\nThe correct answer is " + c + " \n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                }
+            } else {}
+        }
+    }
+
+    // ************************   Integer subtraction *************************
+    function IntSub() {
+        var a = Math.ceil(Math.random() * 10);
+        var b = Math.ceil(Math.random() * 10);
+        if (a >= 10 || b >= 10) {
+            IntSub();
+        } else {
+            var c = a - b;
+            var result = prompt(+a + " - " + b + " = ");
+            if (result != null && result!="") {
+                if (result == c) {
+                    total++;
+                    correct++;
+                    alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                } else {
+                    total++;
+                    wrong++;
+                    alert("Wrong answer.\n The correct answer is " + c + "\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                }
+            } else {}
+        }
+    }
+
+    //***********************   Float addition   ***************************
+    function FloatAdd() {
+        var a = Math.random() * 10;
+        a = Math.round(a * 10) / 10; // only 2 decimals
+        var b = Math.random() * 10;
+        b = Math.round(b * 10) / 10; // only 2 decimals
+        var r = a % 1;
+        var s = b % 1;
+        if (r == 0 || a < 1 || s == 0 || b < 1) {
+            //alert("i am calling floatadd again because \n a= "+a+"b= "+b);
+            FloatAdd();
+        } else {
+            var c = a + b;
+            c = Math.round(c * 100) / 100;
+            var result = prompt(+a + " + " + b + " = ");
+            if (result != null && result!="") {
+                if (result == c) {
+                    total++;
+                    correct++;
+                    alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                } else {
+                    total++;
+                    wrong++;
+                    alert("Wrong answer.\n The correct answer is " + c + "\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                }
+            } else {}
+        }
+    }
+    // *************************** Float subtraction  *******************
+    function FloatSub() {
+        var a = Math.random() * 10;
+        a = Math.round(a * 10) / 10; // only 2 decimals
+        var b = Math.random() * 10;
+        b = Math.round(b * 10) / 10; // only 2 decimals
+        var r = a % 1;
+        var s = b % 1;
+        if (r == 0 || a < 1 || s == 0 || b < 1) {
+            //alert("i am calling floatsub again because \n a= "+a+"b= "+b);
+            FloatSub();
+        } else {
+            var c = a - b;
+            c = Math.round(c * 100) / 100;
+            var result = prompt(+a + " - " + b + " = ");
+            if (result != null && result!="") {
+                if (result == c) {
+                    total++;
+                    correct++;
+                    alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                } else {
+                    total++;
+                    wrong++;
+                    alert("Wrong answer.\n The correct answer is " + c + "\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                }
+            } else {}
+        }
+    }
+
+    // **************************** Complex addition  ***************************
+    function ComplexAdd() {
+        var x1 = Math.ceil(Math.random() * 10);
+        var x2 = Math.ceil(Math.random() * 10);
+        var y1 = Math.ceil(Math.random() * 10);
+        var y2 = Math.ceil(Math.random() * 10);
+        if (x1 >= 10 || x2 >= 10 || y1 >= 10 || y2 >= 10) {
+            //alert("i am calling complexADD again because \n x1= "+x1+"x2= "+x2+" y1= "+y1+" y2= "+y2);
+            ComplexAdd();
+        } else {
+            var z1 = x1 + y1;
+            var z2 = x2 + y2;
+            var z1_temp = z1.toString();
+            var z2_temp = z2.toString();
+
+            var c = z1_temp.concat("+", z2_temp, "i");
+            // alert("c="+c);
+            var result = prompt(x1 + "+" + x2 + "i  +  " + y1 + "+" + y2 + "i  = ");
+            if (result != null && result!="") {
+                if (result == c) {
+                    total++;
+                    correct++;
+                    alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                } else {
+                    total++;
+                    wrong++;
+                    alert("Wrong answer.\nThe correct answer is " + c + " \n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                }
+            } else {}
+        }
+    }
+
+    // **************************** Complex subtraction  ***************************
+    function ComplexSub() {
+        var x1 = Math.ceil(Math.random() * 10);
+        var x2 = Math.ceil(Math.random() * 10);
+        var y1 = Math.ceil(Math.random() * 10);
+        var y2 = Math.ceil(Math.random() * 10);
+        if (x1 >= 10 || x2 >= 10 || y1 >= 10 || y2 >= 10) {
+            //alert("i am calling complexSUB again because \n x1= "+x1+"x2= "+x2+" y1= "+y1+" y2= "+y2);
+            ComplexSub();
+        } else {
+
+            var z1 = x1 - y1;
+            var z2 = x2 - y2;
+            var z1_temp = z1.toString();
+            var z2_temp = z2.toString();
+
+            if (z2 >= 0) {
+                var c = z1_temp.concat("+", z2_temp, "i");
+            } else {
+                var c = z1_temp.concat(z2_temp, "i");
+            }
+            // alert("c="+c);
+            var result = prompt(x1 + "+" + x2 + "i  -  " + y1 + "+" + y2 + "i  = ");
+            if (result != null && result!="") {
+                if (result == c) {
+                    total++;
+                    correct++;
+                    alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                } else {
+                    total++;
+                    wrong++;
+                    alert("Wrong answer.\nThe correct answer is " + c + " \n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+                }
+            } else {}
+        }
+    }
+
+
+    // **************************** extra addition  ***************************
+    function extraAddition() {
+        var x1 = Math.round(Math.random());
+        var x2 = Math.round(Math.random());
+        var y1 = Math.round(Math.random());
+        var y2 = Math.round(Math.random());
+
+        var z1 = x1 + y1;
+        var z2 = x2 + y2;
+        var z1_temp = z1.toString();
+        var z2_temp = z2.toString();
+
+
+        if (z1 == 0 && z2 == 0) {
+            var c = "0";
+            var c_temp = "0+0i";
+        } else if (z1 == 0) {
+            var c = z2_temp.concat("i");
+            var c_temp = z1_temp.concat("+" + z2_temp + "i");
+        } else if (z2 == 0) {
+            var c = z1_temp;
+            var c_temp = z1_temp.concat("+0i");
+        } else {
+            var c = z1_temp.concat("+", z2_temp, "i");
+            var c_temp = z1_temp.concat("+", z2_temp, "i");
+        }
+
+        var result = prompt(x1 + "+" + x2 + "i  +  " + y1 + "+" + y2 + "i  = ");
+        if (result != null && result!="") {
+            if (result == c || result.toString() == c_temp.toString()) {
+                total++;
+                correct++;
+                alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+            } else {
+                total++;
+                wrong++;
+                alert("Wrong answer.\nThe correct answer is " + c + " \n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+            }
+        } else {}
+    }
+
+    // **************************** extra subtraction  ***************************
+    function extraSubtaction() {
+        var x1 = Math.round(Math.random());
+        var x2 = Math.round(Math.random());
+        var y1 = Math.round(Math.random());
+        var y2 = Math.round(Math.random());
+
+        var z1 = x1 - y1;
+        var z2 = x2 - y2;
+        var z1_temp = z1.toString();
+        var z2_temp = z2.toString();
+
+
+        if (z1 == 0 && z2 == 0) {
+            var c = "0";
+            var c_temp = "0+0i";
+        } else if (z1 == 0 && z2 != 0) {
+            var c = z2_temp.concat("i");
+            z1_temp = "0";
+            var c_temp = z1_temp.concat("+", z2, "i");
+        } else if (z2 == 0) {
+            var c = z1_temp;
+            var c_temp = z1_temp.concat("+0i");
+        } else if (z1 != 0 && z2 < 0) {
+            var c = z1_temp.concat(z2_temp, "i");
+            var c_temp = z1_temp.concat(z2_temp, "i");
+        } else {
+            var c = z1_temp.concat("+", z2_temp, "i");
+            var c_temp = z1_temp.concat("+", z2_temp, "i");
+        }
+
+
+        var result = prompt(x1 + "+" + x2 + "i  -  " + y1 + "+" + y2 + "i  = ");
+        if (result != null && result!="") {
+
+            if (result == c || result.toString() == c_temp.toString()) {
+                total++;
+                correct++;
+                alert("Correct answer.\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+            } else {
+                total++;
+                wrong++;
+                alert("Wrong answer.\nThe correct answer is " + c + " \n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+            }
+        } else {}
+    }
+
+
+
+
+    function CheckScore() {
+        alert("\n Total:    " + total + "\n Correct: " + correct + "\n Wrong:  " + wrong);
+    }
+
+    function ResetScore() {
+        total = 0;
+        correct = 0;
+        wrong = 0;
+    }
+</script>
+
+</html>
